@@ -1,0 +1,119 @@
+# AI Chat UI Clone (Separate Files) ## index.html ```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chat UI</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="bg-[#0f172a] text-white h-screen flex">
+    <!-- Sidebar -->
+    <aside
+      class="w-72 bg-[#111827] border-r border-gray-800 p-5 hidden md:flex flex-col justify-between"
+    >
+      <div>
+        <h1
+          class="text-2xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text"
+        >
+          AI Assistant
+        </h1>
+
+        <button
+          id="newChat"
+          class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-105 transition-all duration-300 py-3 rounded-xl font-semibold shadow-lg"
+        >
+          + New Chat
+        </button>
+
+        <div class="mt-8 space-y-3">
+          <div
+            class="bg-[#1f2937] p-3 rounded-xl hover:bg-[#374151] cursor-pointer transition-all"
+          >
+            Frontend Project Ideas
+          </div>
+
+          <div
+            class="bg-[#1f2937] p-3 rounded-xl hover:bg-[#374151] cursor-pointer transition-all"
+          >
+            Tailwind CSS Tips
+          </div>
+
+          <div
+            class="bg-[#1f2937] p-3 rounded-xl hover:bg-[#374151] cursor-pointer transition-all"
+          >
+            JavaScript DOM Guide
+          </div>
+        </div>
+      </div>
+
+      <div class="text-sm text-gray-400 text-center">
+        Created By Nishant Gupta
+      </div>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <main
+      class="flex-1 flex flex-col bg-gradient-to-br from-[#0f172a] to-[#111827]"
+    >
+      <!-- Top Bar -->
+      <header
+        class="h-16 border-b border-gray-800 flex items-center justify-between px-6 backdrop-blur-xl bg-white/5"
+      >
+        <h2 class="text-xl font-semibold">AI Chat Interface</h2>
+
+        <button
+          id="themeBtn"
+          class="bg-[#1e293b] hover:bg-[#334155] px-4 py-2 rounded-lg transition-all"
+        >
+          Toggle Theme
+        </button>
+      </header>
+
+      <!-- Chat Messages -->
+      <section
+        id="chatBox"
+        class="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-hide"
+      >
+        <div class="flex items-start gap-3">
+          <div
+            class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center font-bold"
+          >
+            AI
+          </div>
+
+          <div
+            class="bg-[#1e293b] p-4 rounded-2xl max-w-xl shadow-xl border border-gray-700"
+          >
+            Hello Nishant 👋<br /><br />
+            I am your AI Assistant. Ask me anything about frontend development.
+          </div>
+        </div>
+      </section>
+
+      <!-- Input Box -->
+      <footer class="p-5 border-t border-gray-800 bg-white/5 backdrop-blur-xl">
+        <div class="max-w-4xl mx-auto flex items-center gap-4">
+          <input
+            id="messageInput"
+            type="text"
+            placeholder="Type your message..."
+            class="flex-1 bg-[#1e293b] border border-gray-700 focus:border-cyan-400 outline-none rounded-2xl px-5 py-4 text-white"
+          />
+
+          <button
+            id="sendBtn"
+            class="bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-4 rounded-2xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+          >
+            Send
+          </button>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
